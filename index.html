@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxury Watches</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Timeless Watches</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button>🔍</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Brands</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Product Container -->
+  <div class="product-container">
+    <div class="product-gallery">
+      <div class="main-image">
+        <img id="main-image" src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491" alt="Luxury Watch">
+      </div>
+      <div class="thumbnails">
+        <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491" data-image="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/1.jpg?5491" alt="Thumbnail 5">
+        <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/2.jpg?5491" data-image="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/2.jpg?5491" alt="Thumbnail 1">
+        <img src="https://www.ukspecialistwatches.co.uk/wp-content/uploads/2024/03/Wolverhampton-Luxury-Rolex-Watches-UK-Luxury-Mens-Ladies-Watches.webp" data-image="https://www.ukspecialistwatches.co.uk/wp-content/uploads/2024/03/Wolverhampton-Luxury-Rolex-Watches-UK-Luxury-Mens-Ladies-Watches.webp" alt="Thumbnail 2">
+        <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/5.jpg?5491" data-image="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/5.jpg?5491" alt="Thumbnail 3">
+        <img src="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/7.jpg?5491" data-image="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/1542852/7.jpg?5491" alt="Thumbnail 4">
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-details">
+      <h1>Elegant Luxury Watch</h1>
+      <p class="brand">PRESTIGE TIME CO.</p>
+      <p class="price">
+        <span class="current-price">RS4000</span>
+        <span class="old-price">RS8000</span>
+        <span class="discount">50% OFF</span>
+      </p>
+      <p class="description">
+        This luxurious timepiece combines elegance with precision craftsmanship.
+        Perfect for formal occasions or everyday wear.
+      </p>
+
+      <!-- Ratings -->
+      <div class="ratings">
+        <span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span><span class="star">⭐</span>
+        <p>Rated 4.8/5 (256 reviews)</p>
+      </div>
+
+      <!-- Quantity Selector -->
+      <div class="quantity-selector">
+        <button onclick="decreaseQuantity()">-</button>
+        <input type="number" id="quantity" value="1" min="1">
+        <button onclick="increaseQuantity()">+</button>
+      </div>
+
+      <button class="add-to-cart">Add to Cart</button>
+
+      <!-- Promotion -->
+      <div class="promotion">
+        <h3>Limited-Time Offer!</h3>
+        <p>Get 10% off your first purchase when you sign up.</p>
+        <button class="promo-btn">Sign Up Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Timeless Watches. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Handle thumbnail image switching
+    document.querySelectorAll('.thumbnails img').forEach(thumbnail => {
+      thumbnail.addEventListener('click', function () {
+        const mainImage = document.getElementById('main-image');
+        const newSrc = this.getAttribute('data-image');
+        mainImage.src = newSrc;
+      });
+    });
+
+    // Quantity functions
+    function increaseQuantity() {
+      const input = document.getElementById('quantity');
+      input.value = parseInt(input.value) + 1;
+    }
+
+    function decreaseQuantity() {
+      const input = document.getElementById('quantity');
+      if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+      }
+    }
+  </script>
+</body>
+</html>
